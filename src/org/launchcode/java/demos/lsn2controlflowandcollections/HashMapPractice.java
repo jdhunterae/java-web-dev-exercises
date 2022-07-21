@@ -13,7 +13,6 @@ public class HashMapPractice {
 
         System.out.println("Enter the next Student ID (or press ENTER to finish):");
 
-
         do {
             System.out.print("Student ID: ");
             studentId = input.nextLine();
