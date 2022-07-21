@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayListPractice {
-    private static Scanner scanner = new Scanner(System.in);
-    private static ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 1, 2, 3, 5, 8));
-    private static String text = "I would not, could not, in a box. I would not, could not with a fox. I will not eat them in a house. I will not eat them with a mouse.";
+    final private static Scanner scanner = new Scanner(System.in);
+    final private static ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 1, 2, 3, 5, 8));
+    final private static String text = "I would not, could not, in a box. I would not, could not with a fox. I will not eat them in a house. I will not eat them with a mouse.";
 
     public static void main(String[] args) {
         System.out.println(sumEvenArr(numbers));
