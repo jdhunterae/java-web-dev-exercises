@@ -7,11 +7,25 @@ public class Course {
     private Teacher instructor;
     private ArrayList<Student> enrolledStudents;
 
-    // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather than
-    //  just the class fields.
+    @Override
+    public String toString() {
+        String teacher = String.format("%s %s", instructor.getFirstName(), instructor.getLastName());
+        return String.format("%s: taught by %s (%d students enrolled)", topic, teacher, enrolledStudents.size());
+    }
 
+    @Override
+    public boolean equals(Object object) {
+        if (object == null || object.getClass() != getClass()) {
+            return false;
+        }
 
-    // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
-    //  Course objects equal.
+        if (object == this) {
+            return true;
+        }
 
+        Course course = (Course) object;
+        return course.topic.equals(topic) &&
+                course.instructor.equals(instructor) &&
+                course.enrolledStudents.equals(enrolledStudents);
+    }
 }
