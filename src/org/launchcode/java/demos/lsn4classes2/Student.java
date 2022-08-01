@@ -1,6 +1,7 @@
 package org.launchcode.java.demos.lsn4classes2;
 
 public class Student {
+    private static final int FRESHMAN_MAX = 29, SOPHOMORE_MAX = 59, JUNIOR_MAX = 89;
 
     private static int nextStudentId = 1;
     private String name;
@@ -8,7 +9,7 @@ public class Student {
     private int numberOfCredits = 0;
     private double gpa = 0.0;
 
-    public Student (String name, int studentId, int numberOfCredits, double gpa) {
+    public Student(String name, int studentId, int numberOfCredits, double gpa) {
         this.name = name;
         this.studentId = studentId;
         this.numberOfCredits = numberOfCredits;
@@ -28,11 +29,17 @@ public class Student {
         return (this.name + " has a GPA of: " + this.gpa);
     }
 
-
-     //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
+    public String getGradeLevel() {
+        if (this.numberOfCredits <= FRESHMAN_MAX) {
+            return "freshman";
+        } else if (this.numberOfCredits <= SOPHOMORE_MAX) {
+            return "sophomore";
+        } else if (this.numberOfCredits <= JUNIOR_MAX) {
+            return "junior";
+        } else {
+            return "senior";
+        }
+    }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
@@ -78,7 +85,7 @@ public class Student {
     }
 
     public static void main(String[] args) {
-        Student sally = new Student("Sally",1,1,4.0);
+        Student sally = new Student("Sally", 1, 1, 4.0);
         System.out.println("The Student class works! " + sally.getName() + " is a student!");
         System.out.println(sally);
         sally.addGrade(12, 3.5);
