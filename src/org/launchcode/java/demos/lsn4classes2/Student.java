@@ -6,8 +6,8 @@ public class Student {
     private static int nextStudentId = 1;
     private String name;
     private int studentId;
-    private int numberOfCredits = 0;
-    private double gpa = 0.0;
+    private int numberOfCredits;
+    private double gpa;
 
     public Student(String name, int studentId, int numberOfCredits, double gpa) {
         this.name = name;
@@ -24,6 +24,8 @@ public class Student {
         this(name, nextStudentId);
         nextStudentId++;
     }
+
+
 
     public String studentInfo() {
         return (this.name + " has a GPA of: " + this.gpa);
